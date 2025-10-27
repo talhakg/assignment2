@@ -1,0 +1,81 @@
+2025-10-12 14:02:59,382 - INFO - ============================================================
+2025-10-12 14:02:59,382 - INFO - DATA WAREHOUSE LAB - SQL QUERY EXECUTION
+2025-10-12 14:02:59,382 - INFO - ============================================================
+2025-10-12 14:02:59,382 - INFO - Execution started at: 2025-10-12 14:02:59
+2025-10-12 14:02:59,382 - INFO - SQL file: queries/sample_schema/aggregation_example.sql
+2025-10-12 14:02:59,382 - INFO - Data folder: data/sample_schema/
+2025-10-12 14:02:59,382 - INFO - Log file: logs/agg_test.txt
+2025-10-12 14:02:59,382 - INFO - ============================================================
+2025-10-12 14:02:59,387 - INFO - ✓ Connected to DuckDB
+2025-10-12 14:02:59,388 - INFO - Found 3 CSV file(s) in 'data/sample_schema/'
+2025-10-12 14:02:59,393 - INFO - ✓ Loaded 'dim_product.csv' as table 'dim_product' (20 rows, 7 columns)
+2025-10-12 14:02:59,395 - INFO - ✓ Loaded 'dim_customer.csv' as table 'dim_customer' (20 rows, 7 columns)
+2025-10-12 14:02:59,396 - INFO - ✓ Loaded 'fact_sales.csv' as table 'fact_sales' (30 rows, 10 columns)
+2025-10-12 14:02:59,396 - INFO - ✓ Successfully loaded 3 table(s): dim_product, dim_customer, fact_sales
+2025-10-12 14:02:59,396 - INFO - ✓ Successfully read SQL file 'queries/sample_schema/aggregation_example.sql'
+2025-10-12 14:02:59,396 - INFO - Executing SQL query...
+2025-10-12 14:02:59,396 - INFO - Query:
+-- Aggregation Example: Sales Performance Analysis
+-- This query demonstrates various aggregation functions and grouping
+-- to analyze sales performance across different dimensions
+
+SELECT 
+    c.region,
+    p.category,
+    c.segment,
+    -- Sales metrics
+    COUNT(DISTINCT f.sale_id) as number_of_orders,
+    COUNT(DISTINCT f.customer_id) as unique_customers,
+    SUM(f.quantity) as total_units_sold,
+    SUM(f.total_amount) as total_revenue,
+    AVG(f.total_amount) as avg_order_value,
+    MIN(f.total_amount) as min_order_value,
+    MAX(f.total_amount) as max_order_value,
+    
+    -- Discount analysis
+    AVG(f.discount_percent) as avg_discount_pct,
+    SUM(CASE WHEN f.discount_percent > 0 THEN 1 ELSE 0 END) as discounted_orders,
+    
+    -- Profit analysis (estimated)
+    SUM(f.total_amount - (p.cost * f.quantity)) as estimated_profit,
+    AVG(f.total_amount - (p.cost * f.quantity)) as avg_profit_per_order,
+    
+    -- Date analysis
+    MIN(f.sale_date) as first_sale_date,
+    MAX(f.sale_date) as last_sale_date
+    
+FROM fact_sales f
+JOIN dim_customer c ON f.customer_id = c.customer_id
+JOIN dim_product p ON f.product_id = p.product_id
+GROUP BY c.region, p.category, c.segment
+HAVING SUM(f.total_amount) > 500  -- Only show combinations with revenue > $500
+ORDER BY total_revenue DESC;
+
+2025-10-12 14:02:59,406 - INFO - ✓ Query executed successfully. Result: 12 rows, 16 columns
+2025-10-12 14:02:59,406 - INFO - 
+=== QUERY RESULTS PREVIEW (First 10 rows) ===
+2025-10-12 14:02:59,406 - INFO - Columns: 
+['region', 'category', 'segment', 'number_of_orders', 'unique_customers', 'total_units_sold', 'total_revenue', 'avg_order_value', 'min_order_value', 'max_order_value', 'avg_discount_pct', 'discounted_orders', 'estimated_profit', 'avg_profit_per_order', 'first_sale_date', 'last_sale_date']
+2025-10-12 14:02:59,406 - INFO - 
+2025-10-12 14:02:59,409 - INFO - 
+          region   category     segment  number_of_orders  unique_customers  total_units_sold  total_revenue  avg_order_value  min_order_value  max_order_value  avg_discount_pct  discounted_orders  estimated_profit  avg_profit_per_order first_sale_date last_sale_date
+British Columbia Technology   Corporate                 1                 1               2.0        4799.98         4799.980          4799.98          4799.98          5.000000                1.0           1199.98           1199.980000      2024-01-16     2024-01-16
+         Ontario Technology   Corporate                 3                 2               6.0        2759.94          919.980           259.98          1799.98          3.333333                1.0            799.94            266.646667      2024-01-19     2024-02-07
+         Alberta Technology Home Office                 1                 1               1.0        2399.99         2399.990          2399.99          2399.99          0.000000                0.0            599.99            599.990000      2024-02-06     2024-02-06
+    Saskatchewan  Furniture   Corporate                 2                 1               5.0        2283.95         1141.975           983.96          1299.99         17.500000                2.0            663.95            331.975000      2024-01-23     2024-02-09
+         Ontario Technology    Consumer                 3                 2               5.0        2269.95          756.650           269.97          1099.99          3.333333                2.0            719.95            239.983333      2024-01-15     2024-02-05
+     Nova Scotia Technology Home Office                 2                 1               2.0        1449.98          724.990           349.99          1099.99          7.500000                1.0            449.98            224.990000      2024-01-21     2024-02-08
+          Quebec  Furniture   Corporate                 1                 1               1.0        1299.99         1299.990          1299.99          1299.99         25.000000                1.0            399.99            399.990000      2024-02-11     2024-02-11
+         Ontario  Furniture Home Office                 2                 2               2.0        1199.98          599.990           299.99           899.99          0.000000                0.0            349.98            174.990000      2024-01-29     2024-02-10
+         Alberta  Furniture    Consumer                 1                 1               1.0         899.99          899.990           899.99           899.99          0.000000                0.0            249.99            249.990000      2024-01-22     2024-01-22
+         Ontario Technology Home Office                 2                 2               7.0         859.93          429.965           319.96           539.97          2.500000                1.0            304.93            152.465000      2024-01-25     2024-02-12
+2025-10-12 14:02:59,409 - INFO - 
+... (2 more rows not shown)
+2025-10-12 14:02:59,409 - INFO - ==================================================
+2025-10-12 14:02:59,410 - INFO - ✓ Query results saved to 'outputs/sample_schema/aggregation_example_output.csv'
+2025-10-12 14:02:59,410 - INFO - ============================================================
+2025-10-12 14:02:59,410 - INFO - EXECUTION COMPLETED SUCCESSFULLY
+2025-10-12 14:02:59,410 - INFO - Results saved to: outputs/sample_schema/aggregation_example_output.csv
+2025-10-12 14:02:59,410 - INFO - Logs saved to: logs/agg_test.txt
+2025-10-12 14:02:59,410 - INFO - ============================================================
+2025-10-12 14:02:59,411 - INFO - ✓ DuckDB connection closed

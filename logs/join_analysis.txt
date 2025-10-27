@@ -1,0 +1,64 @@
+2025-10-25 15:14:59,347 - INFO - ============================================================
+2025-10-25 15:14:59,347 - INFO - DATA WAREHOUSE LAB - SQL QUERY EXECUTION
+2025-10-25 15:14:59,348 - INFO - ============================================================
+2025-10-25 15:14:59,348 - INFO - Execution started at: 2025-10-25 15:14:59
+2025-10-25 15:14:59,349 - INFO - SQL file: queries/sample_schema/join_example.sql
+2025-10-25 15:14:59,349 - INFO - Data folder: data/sample_schema/
+2025-10-25 15:14:59,349 - INFO - Log file: logs/join_analysis.txt
+2025-10-25 15:14:59,349 - INFO - ============================================================
+2025-10-25 15:14:59,365 - INFO - Found 3 CSV file(s) in 'data/sample_schema/'
+2025-10-25 15:14:59,378 - INFO - Executing SQL query...
+2025-10-25 15:14:59,378 - INFO - Query:
+-- JOIN Example: Combining Fact and Dimension Tables
+-- This query demonstrates how to join fact tables with dimension tables
+-- to create meaningful business reports
+
+SELECT 
+    c.customer_name,
+    c.city,
+    c.region,
+    c.segment,
+    p.product_name,
+    p.category,
+    p.brand,
+    f.sale_date,
+    f.quantity,
+    f.unit_price,
+    f.total_amount,
+    f.discount_percent,
+    f.sales_rep,
+    -- Calculate profit margin
+    (f.total_amount - (p.cost * f.quantity)) as profit,
+    -- Calculate profit margin percentage
+    ROUND(((f.total_amount - (p.cost * f.quantity)) / f.total_amount) * 100, 2) as profit_margin_pct
+FROM fact_sales f
+JOIN dim_customer c ON f.customer_id = c.customer_id
+JOIN dim_product p ON f.product_id = p.product_id
+WHERE f.sale_date >= '2024-01-01'
+ORDER BY f.sale_date DESC, f.total_amount DESC;
+
+2025-10-25 15:14:59,384 - INFO - 
+=== QUERY RESULTS PREVIEW (First 10 rows) ===
+2025-10-25 15:14:59,384 - INFO - Columns: 
+['customer_name', 'city', 'region', 'segment', 'product_name', 'category', 'brand', 'sale_date', 'quantity', 'unit_price', 'total_amount', 'discount_percent', 'sales_rep', 'profit', 'profit_margin_pct']
+2025-10-25 15:14:59,385 - INFO - 
+2025-10-25 15:14:59,388 - INFO - 
+  customer_name        city        region     segment            product_name   category         brand  sale_date  quantity  unit_price  total_amount  discount_percent      sales_rep  profit  profit_margin_pct
+   Andrew Lopez Fredericton New Brunswick Home Office         Wooden Desk Oak  Furniture          IKEA 2024-02-14         1      199.99        199.99               0.0   Mike Johnson   79.99              40.00
+   Matthew King   Kitchener       Ontario   Corporate Filing Cabinet 4-drawer  Furniture       Staples 2024-02-13         2      149.99        299.98               0.0      Lisa Wong  119.98              40.00
+    Daniel Hall Thunder Bay       Ontario Home Office     HP Printer LaserJet Technology            HP 2024-02-12         3      179.99        539.97               5.0    John Carter  164.97              30.55
+  William Lewis Quebec City        Quebec   Corporate      Office Sofa 3-seat  Furniture      West Elm 2024-02-11         1     1299.99       1299.99              25.0 Sarah Mitchell  399.99              30.77
+   James Garcia      London       Ontario Home Office    Conference Table 8ft  Furniture Herman Miller 2024-02-10         1      899.99        899.99               0.0   Mike Johnson  249.99              27.78
+Christopher Lee   Saskatoon  Saskatchewan   Corporate  Office Chair Executive  Furniture     Steelcase 2024-02-09         4      245.99        983.96              15.0    John Carter  263.96              26.83
+Robert Anderson     Halifax   Nova Scotia Home Office      Monitor 27-inch 4K Technology            LG 2024-02-08         1      349.99        349.99               0.0      Lisa Wong   99.99              28.57
+   David Wilson      Ottawa       Ontario   Corporate Laptop Dell Inspiron 15 Technology          Dell 2024-02-07         2      899.99       1799.98              10.0 Sarah Mitchell  499.98              27.78
+  Michael Brown     Calgary       Alberta Home Office     MacBook Pro 14-inch Technology         Apple 2024-02-06         1     2399.99       2399.99               0.0   Mike Johnson  599.99              25.00
+     John Smith     Toronto       Ontario    Consumer      Samsung Galaxy S24 Technology       Samsung 2024-02-05         1     1099.99       1099.99               5.0    John Carter  349.99              31.82
+2025-10-25 15:14:59,388 - INFO - 
+... (20 more rows not shown)
+2025-10-25 15:14:59,388 - INFO - ==================================================
+2025-10-25 15:14:59,391 - INFO - ============================================================
+2025-10-25 15:14:59,391 - INFO - EXECUTION COMPLETED SUCCESSFULLY
+2025-10-25 15:14:59,391 - INFO - Results saved to: outputs/sample_schema/join_example_output.csv
+2025-10-25 15:14:59,391 - INFO - Logs saved to: logs/join_analysis.txt
+2025-10-25 15:14:59,391 - INFO - ============================================================

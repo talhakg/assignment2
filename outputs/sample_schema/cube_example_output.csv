@@ -1,0 +1,74 @@
+region,category,age_group,total_orders,total_sales,avg_order_value,total_quantity
+Alberta,Furniture,35-44,1,899.99,899.99,1.0
+Alberta,Furniture,45-54,1,199.99,199.99,1.0
+Alberta,Furniture,,2,1099.98,549.99,2.0
+Alberta,Technology,45-54,1,2399.99,2399.99,1.0
+Alberta,Technology,,1,2399.99,2399.99,1.0
+Alberta,,35-44,1,899.99,899.99,1.0
+Alberta,,45-54,2,2599.9799999999996,1299.9899999999998,2.0
+Alberta,,,3,3499.9699999999993,1166.6566666666665,3.0
+British Columbia,Technology,25-34,1,359.98,359.98,2.0
+British Columbia,Technology,35-44,1,4799.98,4799.98,2.0
+British Columbia,Technology,,2,5159.959999999999,2579.9799999999996,4.0
+British Columbia,,25-34,1,359.98,359.98,2.0
+British Columbia,,35-44,1,4799.98,4799.98,2.0
+British Columbia,,,2,5159.959999999999,2579.9799999999996,4.0
+Manitoba,Furniture,55-64,1,149.99,149.99,1.0
+Manitoba,Furniture,,1,149.99,149.99,1.0
+Manitoba,,55-64,1,149.99,149.99,1.0
+Manitoba,,,1,149.99,149.99,1.0
+New Brunswick,Furniture,25-34,1,199.99,199.99,1.0
+New Brunswick,Furniture,,1,199.99,199.99,1.0
+New Brunswick,Technology,25-34,1,199.98,199.98,2.0
+New Brunswick,Technology,,1,199.98,199.98,2.0
+New Brunswick,,25-34,2,399.97,199.985,3.0
+New Brunswick,,,2,399.97,199.985,3.0
+Newfoundland,Furniture,55-64,1,89.99,89.99,1.0
+Newfoundland,Furniture,,1,89.99,89.99,1.0
+Newfoundland,,55-64,1,89.99,89.99,1.0
+Newfoundland,,,1,89.99,89.99,1.0
+Nova Scotia,Technology,25-34,2,1449.98,724.99,2.0
+Nova Scotia,Technology,,2,1449.98,724.99,2.0
+Nova Scotia,,25-34,2,1449.98,724.99,2.0
+Nova Scotia,,,2,1449.98,724.99,2.0
+Ontario,Furniture,35-44,3,1599.96,533.32,4.0
+Ontario,Furniture,45-54,1,299.99,299.99,1.0
+Ontario,Furniture,55-64,1,91.98,91.98,2.0
+Ontario,Furniture,,5,1991.93,398.386,7.0
+Ontario,Technology,25-34,3,2269.95,756.65,5.0
+Ontario,Technology,35-44,4,3079.9,769.975,10.0
+Ontario,Technology,45-54,1,539.97,539.97,3.0
+Ontario,Technology,,8,5889.82,736.2275,18.0
+Ontario,,25-34,3,2269.95,756.65,5.0
+Ontario,,35-44,7,4679.860000000001,668.5514285714287,14.0
+Ontario,,45-54,2,839.96,419.98,4.0
+Ontario,,55-64,1,91.98,91.98,2.0
+Ontario,,,13,7881.75,606.2884615384615,25.0
+Prince Edward Island,Technology,35-44,1,699.99,699.99,1.0
+Prince Edward Island,Technology,,1,699.99,699.99,1.0
+Prince Edward Island,,35-44,1,699.99,699.99,1.0
+Prince Edward Island,,,1,699.99,699.99,1.0
+Quebec,Furniture,25-34,2,2037.96,1018.98,4.0
+Quebec,Furniture,,2,2037.96,1018.98,4.0
+Quebec,Technology,25-34,1,149.95,149.95,5.0
+Quebec,Technology,,1,149.95,149.95,5.0
+Quebec,,25-34,3,2187.91,729.3033333333333,9.0
+Quebec,,,3,2187.91,729.3033333333333,9.0
+Saskatchewan,Furniture,45-54,2,2283.95,1141.975,5.0
+Saskatchewan,Furniture,,2,2283.95,1141.975,5.0
+Saskatchewan,,45-54,2,2283.95,1141.975,5.0
+Saskatchewan,,,2,2283.95,1141.975,5.0
+,Furniture,25-34,3,2237.95,745.9833333333332,5.0
+,Furniture,35-44,4,2499.95,624.9875,5.0
+,Furniture,45-54,4,2783.9300000000003,695.9825000000001,7.0
+,Furniture,55-64,3,331.96000000000004,110.65333333333335,4.0
+,Furniture,,14,7853.789999999999,560.9849999999999,21.0
+,Technology,25-34,8,4429.84,553.73,16.0
+,Technology,35-44,6,8579.869999999999,1429.9783333333332,13.0
+,Technology,45-54,2,2939.96,1469.98,4.0
+,Technology,,16,15949.669999999998,996.8543749999999,33.0
+,,25-34,11,6667.789999999999,606.1627272727272,21.0
+,,35-44,10,11079.82,1107.982,18.0
+,,45-54,6,5723.889999999999,953.9816666666666,11.0
+,,55-64,3,331.96000000000004,110.65333333333335,4.0
+,,,30,23803.459999999995,793.4486666666666,54.0

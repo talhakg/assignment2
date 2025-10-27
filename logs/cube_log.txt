@@ -1,0 +1,57 @@
+2025-10-25 15:14:13,998 - INFO - ============================================================
+2025-10-25 15:14:13,998 - INFO - DATA WAREHOUSE LAB - SQL QUERY EXECUTION
+2025-10-25 15:14:13,998 - INFO - ============================================================
+2025-10-25 15:14:13,998 - INFO - Execution started at: 2025-10-25 15:14:13
+2025-10-25 15:14:13,999 - INFO - SQL file: queries/sample_schema/cube_example.sql
+2025-10-25 15:14:13,999 - INFO - Data folder: data/sample_schema/
+2025-10-25 15:14:13,999 - INFO - Log file: logs/cube_log.txt
+2025-10-25 15:14:13,999 - INFO - ============================================================
+2025-10-25 15:14:14,014 - INFO - Found 3 CSV file(s) in 'data/sample_schema/'
+2025-10-25 15:14:14,033 - INFO - Executing SQL query...
+2025-10-25 15:14:14,033 - INFO - Query:
+-- CUBE Example: Multi-dimensional Analysis
+-- This query demonstrates CUBE functionality for analyzing sales data
+-- across multiple dimensions (region, category, age_group)
+
+SELECT 
+    c.region,
+    p.category,
+    c.age_group,
+    COUNT(*) as total_orders,
+    SUM(f.total_amount) as total_sales,
+    AVG(f.total_amount) as avg_order_value,
+    SUM(f.quantity) as total_quantity
+FROM fact_sales f
+JOIN dim_customer c ON f.customer_id = c.customer_id
+JOIN dim_product p ON f.product_id = p.product_id
+GROUP BY CUBE (c.region, p.category, c.age_group)
+ORDER BY 
+    c.region NULLS LAST,
+    p.category NULLS LAST,
+    c.age_group NULLS LAST;
+
+2025-10-25 15:14:14,053 - INFO - 
+=== QUERY RESULTS PREVIEW (First 10 rows) ===
+2025-10-25 15:14:14,053 - INFO - Columns: 
+['region', 'category', 'age_group', 'total_orders', 'total_sales', 'avg_order_value', 'total_quantity']
+2025-10-25 15:14:14,053 - INFO - 
+2025-10-25 15:14:14,055 - INFO - 
+          region   category age_group  total_orders  total_sales  avg_order_value  total_quantity
+         Alberta  Furniture     35-44             1       899.99       899.990000             1.0
+         Alberta  Furniture     45-54             1       199.99       199.990000             1.0
+         Alberta  Furniture      None             2      1099.98       549.990000             2.0
+         Alberta Technology     45-54             1      2399.99      2399.990000             1.0
+         Alberta Technology      None             1      2399.99      2399.990000             1.0
+         Alberta       None     35-44             1       899.99       899.990000             1.0
+         Alberta       None     45-54             2      2599.98      1299.990000             2.0
+         Alberta       None      None             3      3499.97      1166.656667             3.0
+British Columbia Technology     25-34             1       359.98       359.980000             2.0
+British Columbia Technology     35-44             1      4799.98      4799.980000             2.0
+2025-10-25 15:14:14,055 - INFO - 
+... (63 more rows not shown)
+2025-10-25 15:14:14,056 - INFO - ==================================================
+2025-10-25 15:14:14,058 - INFO - ============================================================
+2025-10-25 15:14:14,058 - INFO - EXECUTION COMPLETED SUCCESSFULLY
+2025-10-25 15:14:14,058 - INFO - Results saved to: outputs/sample_schema/cube_example_output.csv
+2025-10-25 15:14:14,059 - INFO - Logs saved to: logs/cube_log.txt
+2025-10-25 15:14:14,059 - INFO - ============================================================

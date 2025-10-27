@@ -1,0 +1,21 @@
+customer_id,customer_name,city,region,country,age_group,segment
+1,John Smith,Toronto,Ontario,Canada,25-34,Consumer
+2,Emily Johnson,Vancouver,British Columbia,Canada,35-44,Corporate
+3,Michael Brown,Calgary,Alberta,Canada,45-54,Home Office
+4,Sarah Davis,Montreal,Quebec,Canada,25-34,Consumer
+5,David Wilson,Ottawa,Ontario,Canada,35-44,Corporate
+6,Jennifer Taylor,Winnipeg,Manitoba,Canada,55-64,Consumer
+7,Robert Anderson,Halifax,Nova Scotia,Canada,25-34,Home Office
+8,Lisa Thompson,Edmonton,Alberta,Canada,35-44,Consumer
+9,Christopher Lee,Saskatoon,Saskatchewan,Canada,45-54,Corporate
+10,Amanda Martinez,Victoria,British Columbia,Canada,25-34,Consumer
+11,James Garcia,London,Ontario,Canada,35-44,Home Office
+12,Michelle Rodriguez,Hamilton,Ontario,Canada,55-64,Consumer
+13,William Lewis,Quebec City,Quebec,Canada,25-34,Corporate
+14,Jessica Walker,Windsor,Ontario,Canada,35-44,Consumer
+15,Daniel Hall,Thunder Bay,Ontario,Canada,45-54,Home Office
+16,Ashley Young,Kingston,Ontario,Canada,25-34,Consumer
+17,Matthew King,Kitchener,Ontario,Canada,35-44,Corporate
+18,Nicole Wright,St. John's,Newfoundland,Canada,55-64,Consumer
+19,Andrew Lopez,Fredericton,New Brunswick,Canada,25-34,Home Office
+20,Stephanie Hill,Charlottetown,Prince Edward Island,Canada,35-44,Consumer

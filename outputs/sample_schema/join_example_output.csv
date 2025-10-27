@@ -1,0 +1,31 @@
+customer_name,city,region,segment,product_name,category,brand,sale_date,quantity,unit_price,total_amount,discount_percent,sales_rep,profit,profit_margin_pct
+Andrew Lopez,Fredericton,New Brunswick,Home Office,Wooden Desk Oak,Furniture,IKEA,2024-02-14,1,199.99,199.99,0.0,Mike Johnson,79.99000000000001,40.0
+Matthew King,Kitchener,Ontario,Corporate,Filing Cabinet 4-drawer,Furniture,Staples,2024-02-13,2,149.99,299.98,0.0,Lisa Wong,119.98000000000002,40.0
+Daniel Hall,Thunder Bay,Ontario,Home Office,HP Printer LaserJet,Technology,HP,2024-02-12,3,179.99,539.97,5.0,John Carter,164.97000000000003,30.55
+William Lewis,Quebec City,Quebec,Corporate,Office Sofa 3-seat,Furniture,West Elm,2024-02-11,1,1299.99,1299.99,25.0,Sarah Mitchell,399.99,30.77
+James Garcia,London,Ontario,Home Office,Conference Table 8ft,Furniture,Herman Miller,2024-02-10,1,899.99,899.99,0.0,Mike Johnson,249.99,27.78
+Christopher Lee,Saskatoon,Saskatchewan,Corporate,Office Chair Executive,Furniture,Steelcase,2024-02-09,4,245.99,983.96,15.0,John Carter,263.96000000000004,26.83
+Robert Anderson,Halifax,Nova Scotia,Home Office,Monitor 27-inch 4K,Technology,LG,2024-02-08,1,349.99,349.99,0.0,Lisa Wong,99.99000000000001,28.57
+David Wilson,Ottawa,Ontario,Corporate,Laptop Dell Inspiron 15,Technology,Dell,2024-02-07,2,899.99,1799.98,10.0,Sarah Mitchell,499.98,27.78
+Michael Brown,Calgary,Alberta,Home Office,MacBook Pro 14-inch,Technology,Apple,2024-02-06,1,2399.99,2399.99,0.0,Mike Johnson,599.9899999999998,25.0
+John Smith,Toronto,Ontario,Consumer,Samsung Galaxy S24,Technology,Samsung,2024-02-05,1,1099.99,1099.99,5.0,John Carter,349.99,31.82
+Stephanie Hill,Charlottetown,Prince Edward Island,Consumer,iPad Air 5th Gen,Technology,Apple,2024-02-04,1,699.99,699.99,0.0,Sarah Mitchell,199.99,28.57
+Andrew Lopez,Fredericton,New Brunswick,Home Office,Tablet Stand Adjustable,Technology,Twelve South,2024-02-03,2,99.99,199.98,10.0,Mike Johnson,79.97999999999999,39.99
+Nicole Wright,St. John's,Newfoundland,Consumer,Bookshelf 5-tier,Furniture,IKEA,2024-02-02,1,89.99,89.99,0.0,Lisa Wong,34.989999999999995,38.88
+Matthew King,Kitchener,Ontario,Corporate,Mechanical Keyboard,Technology,Corsair,2024-02-01,2,129.99,259.98,0.0,John Carter,99.98000000000002,38.46
+Ashley Young,Kingston,Ontario,Consumer,Webcam HD 1080p,Technology,Logitech,2024-01-30,3,89.99,269.97,5.0,Sarah Mitchell,119.97000000000003,44.44
+Daniel Hall,Thunder Bay,Ontario,Home Office,Standing Desk Adjustable,Furniture,Flexispot,2024-01-29,1,299.99,299.99,0.0,Mike Johnson,99.99000000000001,33.33
+Jessica Walker,Windsor,Ontario,Consumer,Storage Cabinet Metal,Furniture,Steelcase,2024-01-28,1,399.99,399.99,0.0,Lisa Wong,119.99000000000001,30.0
+William Lewis,Quebec City,Quebec,Corporate,Ergonomic Mouse,Technology,Logitech,2024-01-27,5,29.99,149.95,10.0,John Carter,74.94999999999999,49.98
+Michelle Rodriguez,Hamilton,Ontario,Consumer,Desk Lamp LED,Furniture,Philips,2024-01-26,2,45.99,91.98,0.0,Sarah Mitchell,41.980000000000004,45.64
+James Garcia,London,Ontario,Home Office,Wireless Keyboard,Technology,Microsoft,2024-01-25,4,79.99,319.96,0.0,Mike Johnson,139.95999999999998,43.74
+Amanda Martinez,Victoria,British Columbia,Consumer,HP Printer LaserJet,Technology,HP,2024-01-24,2,179.99,359.98,5.0,Lisa Wong,109.98000000000002,30.55
+Christopher Lee,Saskatoon,Saskatchewan,Corporate,Office Sofa 3-seat,Furniture,West Elm,2024-01-23,1,1299.99,1299.99,20.0,John Carter,399.99,30.77
+Lisa Thompson,Edmonton,Alberta,Consumer,Conference Table 8ft,Furniture,Herman Miller,2024-01-22,1,899.99,899.99,0.0,Sarah Mitchell,249.99,27.78
+Robert Anderson,Halifax,Nova Scotia,Home Office,Samsung Galaxy S24,Technology,Samsung,2024-01-21,1,1099.99,1099.99,15.0,Mike Johnson,349.99,31.82
+Jennifer Taylor,Winnipeg,Manitoba,Consumer,Filing Cabinet 4-drawer,Furniture,Staples,2024-01-20,1,149.99,149.99,0.0,Lisa Wong,59.99000000000001,40.0
+David Wilson,Ottawa,Ontario,Corporate,Monitor 27-inch 4K,Technology,LG,2024-01-19,2,349.99,699.98,0.0,John Carter,199.98000000000002,28.57
+Sarah Davis,Montreal,Quebec,Consumer,Office Chair Executive,Furniture,Steelcase,2024-01-18,3,245.99,737.97,10.0,Sarah Mitchell,197.97000000000003,26.83
+Michael Brown,Calgary,Alberta,Home Office,Wooden Desk Oak,Furniture,IKEA,2024-01-17,1,199.99,199.99,0.0,Mike Johnson,79.99000000000001,40.0
+Emily Johnson,Vancouver,British Columbia,Corporate,MacBook Pro 14-inch,Technology,Apple,2024-01-16,2,2399.99,4799.98,5.0,John Carter,1199.9799999999996,25.0
+John Smith,Toronto,Ontario,Consumer,Laptop Dell Inspiron 15,Technology,Dell,2024-01-15,1,899.99,899.99,0.0,Sarah Mitchell,249.99,27.78

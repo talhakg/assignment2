@@ -1,0 +1,31 @@
+sale_id,customer_id,product_id,sale_date,quantity,unit_price,total_amount,discount_percent,sales_rep,region
+1,1,1,2024-01-15,1,899.99,899.99,0.0,Sarah Mitchell,Ontario
+2,2,7,2024-01-16,2,2399.99,4799.98,5.0,John Carter,British Columbia
+3,3,4,2024-01-17,1,199.99,199.99,0.0,Mike Johnson,Alberta
+4,4,2,2024-01-18,3,245.99,737.97,10.0,Sarah Mitchell,Quebec
+5,5,14,2024-01-19,2,349.99,699.98,0.0,John Carter,Ontario
+6,6,9,2024-01-20,1,149.99,149.99,0.0,Lisa Wong,Manitoba
+7,7,3,2024-01-21,1,1099.99,1099.99,15.0,Mike Johnson,Nova Scotia
+8,8,6,2024-01-22,1,899.99,899.99,0.0,Sarah Mitchell,Alberta
+9,9,17,2024-01-23,1,1299.99,1299.99,20.0,John Carter,Saskatchewan
+10,10,5,2024-01-24,2,179.99,359.98,5.0,Lisa Wong,British Columbia
+11,11,12,2024-01-25,4,79.99,319.96,0.0,Mike Johnson,Ontario
+12,12,15,2024-01-26,2,45.99,91.98,0.0,Sarah Mitchell,Ontario
+13,13,8,2024-01-27,5,29.99,149.95,10.0,John Carter,Quebec
+14,14,19,2024-01-28,1,399.99,399.99,0.0,Lisa Wong,Ontario
+15,15,11,2024-01-29,1,299.99,299.99,0.0,Mike Johnson,Ontario
+16,16,20,2024-01-30,3,89.99,269.97,5.0,Sarah Mitchell,Ontario
+17,17,16,2024-02-01,2,129.99,259.98,0.0,John Carter,Ontario
+18,18,13,2024-02-02,1,89.99,89.99,0.0,Lisa Wong,Newfoundland
+19,19,18,2024-02-03,2,99.99,199.98,10.0,Mike Johnson,New Brunswick
+20,20,10,2024-02-04,1,699.99,699.99,0.0,Sarah Mitchell,Prince Edward Island
+21,1,3,2024-02-05,1,1099.99,1099.99,5.0,John Carter,Ontario
+22,3,7,2024-02-06,1,2399.99,2399.99,0.0,Mike Johnson,Alberta
+23,5,1,2024-02-07,2,899.99,1799.98,10.0,Sarah Mitchell,Ontario
+24,7,14,2024-02-08,1,349.99,349.99,0.0,Lisa Wong,Nova Scotia
+25,9,2,2024-02-09,4,245.99,983.96,15.0,John Carter,Saskatchewan
+26,11,6,2024-02-10,1,899.99,899.99,0.0,Mike Johnson,Ontario
+27,13,17,2024-02-11,1,1299.99,1299.99,25.0,Sarah Mitchell,Quebec
+28,15,5,2024-02-12,3,179.99,539.97,5.0,John Carter,Ontario
+29,17,9,2024-02-13,2,149.99,299.98,0.0,Lisa Wong,Ontario
+30,19,4,2024-02-14,1,199.99,199.99,0.0,Mike Johnson,New Brunswick
