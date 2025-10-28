@@ -1,0 +1,3 @@
+DateKey,FullDate,Day,DayOfWeek,Month,MonthName,Quarter,Year,IsHoliday
+101,2025-01-01,1,3,1,January,1,2025,0
+102,2025-01-02,2,4,1,January,1,2025,0

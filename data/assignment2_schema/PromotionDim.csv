@@ -1,0 +1,3 @@
+PromotionKey,PromoCode,CampaignName,Channel,DiscountType,StartDateKey,EndDateKey,TargetAudience
+122,NEWYEAR25,New Year Sale,Email,Percentage,20250101,20250214,All Customers
+123,FREESHIPPING121,Free Shipping,Email,Flat,20250102,20250214,Online Buyers
