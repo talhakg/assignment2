@@ -1,43 +1,61 @@
-2025-10-29 17:39:42,088 - INFO - ============================================================
-2025-10-29 17:39:42,089 - INFO - DATA WAREHOUSE LAB - SQL QUERY EXECUTION
-2025-10-29 17:39:42,089 - INFO - ============================================================
-2025-10-29 17:39:42,090 - INFO - Execution started at: 2025-10-29 17:39:42
-2025-10-29 17:39:42,091 - INFO - SQL file: queries\assignment2_schema\cube.sql
-2025-10-29 17:39:42,091 - INFO - Data folder: data\assignment2_schema\
-2025-10-29 17:39:42,092 - INFO - Log file: logs\cube_log.txt
-2025-10-29 17:39:42,092 - INFO - ============================================================
-2025-10-29 17:39:42,154 - INFO - Found 6 CSV file(s) in 'data\assignment2_schema\'
-2025-10-29 17:39:42,279 - INFO - Executing SQL query...
-2025-10-29 17:39:42,280 - INFO - Query:
--- DuckDB 3¡Á3 CUBE: Region ¡Á Category ¡Á Year  with Revenue, Cost, Profit
+2025-10-29 18:03:13,794 - INFO - ============================================================
+2025-10-29 18:03:13,795 - INFO - DATA WAREHOUSE LAB - SQL QUERY EXECUTION
+2025-10-29 18:03:13,795 - INFO - ============================================================
+2025-10-29 18:03:13,795 - INFO - Execution started at: 2025-10-29 18:03:13
+2025-10-29 18:03:13,796 - INFO - SQL file: queries\assignment2_schema\cube.sql
+2025-10-29 18:03:13,796 - INFO - Data folder: data\assignment2_schema\
+2025-10-29 18:03:13,796 - INFO - Log file: logs\cube_log.txt
+2025-10-29 18:03:13,797 - INFO - ============================================================
+2025-10-29 18:03:13,831 - INFO - OK Connected to DuckDB
+2025-10-29 18:03:13,853 - INFO - Found 6 CSV file(s) in 'data\assignment2_schema\'
+2025-10-29 18:03:13,869 - INFO - OK Loaded 'CustomerDim.csv' as table 'CustomerDim' (2 rows, 9 columns)
+2025-10-29 18:03:13,885 - INFO - OK Loaded 'DateDim.csv' as table 'DateDim' (2 rows, 9 columns)
+2025-10-29 18:03:13,895 - INFO - OK Loaded 'ProductDim.csv' as table 'ProductDim' (2 rows, 9 columns)
+2025-10-29 18:03:13,906 - INFO - OK Loaded 'PromotionDim.csv' as table 'PromotionDim' (2 rows, 8 columns)
+2025-10-29 18:03:13,919 - INFO - OK Loaded 'WebChannelDim.csv' as table 'WebChannelDim' (2 rows, 6 columns)
+2025-10-29 18:03:13,932 - INFO - OK Loaded 'WebSalesFact.csv' as table 'WebSalesFact' (2 rows, 13 columns)
+2025-10-29 18:03:13,932 - INFO - OK Successfully loaded 6 table(s): CustomerDim, DateDim, ProductDim, PromotionDim, WebChannelDim, WebSalesFact
+2025-10-29 18:03:13,933 - INFO - OK Successfully read SQL file 'queries\assignment2_schema\cube.sql'
+2025-10-29 18:03:13,934 - INFO - Executing SQL query...
+2025-10-29 18:03:13,934 - INFO - Query:
 SELECT
-  COALESCE(c.Region,   'ALL Regions')    AS Region,
-  COALESCE(p.Category, 'ALL Categories') AS Category,
-  COALESCE(CAST(d.Year AS VARCHAR), 'ALL Years') AS Year,
-  SUM(f.SalesAmount)        AS Revenue,
-  SUM(f.CostAmount)         AS Cost,
+  c.Region,
+  p.Category,
+  d.Year,
+  SUM(f.SalesAmount) AS Revenue,
+  SUM(f.CostAmount) AS Cost,
   SUM(f.SalesAmount - f.CostAmount) AS Profit
-FROM WebSalesFact   AS f
-JOIN CustomerDim    AS c ON f.CustomerKey = c.CustomerKey
-JOIN ProductDim     AS p ON f.ProductKey  = p.ProductKey
-JOIN DateDim        AS d ON f.DateKey     = d.DateKey
-GROUP BY CUBE (c.Region, p.Category, d.Year)
-ORDER BY
-  (c.Region IS NULL),   Region,
-  (p.Category IS NULL), Category,
-  (d.Year IS NULL),     Year;
+FROM WebSalesFact f
+JOIN CustomerDim c ON f.CustomerKey = c.CustomerKey
+JOIN ProductDim p ON f.ProductKey = p.ProductKey
+JOIN DateDim d ON f.DateKey = d.DateKey
+GROUP BY CUBE (c.Region, p.Category, d.Year);
 
-2025-10-29 17:39:42,315 - INFO - 
-=== QUERY RESULTS PREVIEW (First 1 rows) ===
-2025-10-29 17:39:42,316 - INFO - Columns: 
+2025-10-29 18:03:13,968 - INFO - OK Query executed successfully. Result: 14 rows, 6 columns
+2025-10-29 18:03:13,969 - INFO - 
+=== QUERY RESULTS PREVIEW (First 10 rows) ===
+2025-10-29 18:03:13,970 - INFO - Columns: 
 ['Region', 'Category', 'Year', 'Revenue', 'Cost', 'Profit']
-2025-10-29 17:39:42,317 - INFO - 
-2025-10-29 17:39:42,327 - INFO - 
-     Region       Category      Year  Revenue  Cost  Profit
-ALL Regions ALL Categories ALL Years      NaN   NaN     NaN
-2025-10-29 17:39:42,328 - INFO - ==================================================
-2025-10-29 17:39:42,341 - INFO - ============================================================
-2025-10-29 17:39:42,342 - INFO - EXECUTION COMPLETED SUCCESSFULLY
-2025-10-29 17:39:42,342 - INFO - Results saved to: outputs/cube_output.csv
-2025-10-29 17:39:42,343 - INFO - Logs saved to: logs\cube_log.txt
-2025-10-29 17:39:42,344 - INFO - ============================================================
+2025-10-29 18:03:13,970 - INFO - 
+2025-10-29 18:03:13,981 - INFO - 
+Region    Category  Year  Revenue  Cost  Profit
+  None        None  <NA>    350.0  60.0   290.0
+ South        None  <NA>    150.0  40.0   110.0
+ North        None  <NA>    200.0  20.0   180.0
+ North Electronics  <NA>    200.0  20.0   180.0
+ South   Furniture  <NA>    150.0  40.0   110.0
+ North Electronics  2025    200.0  20.0   180.0
+ South        None  2025    150.0  40.0   110.0
+ South   Furniture  2025    150.0  40.0   110.0
+  None Electronics  <NA>    200.0  20.0   180.0
+  None Electronics  2025    200.0  20.0   180.0
+2025-10-29 18:03:13,982 - INFO - 
+... (4 more rows not shown)
+2025-10-29 18:03:13,982 - INFO - ==================================================
+2025-10-29 18:03:13,988 - INFO - OK Query results saved to 'outputs/cube_output.csv'
+2025-10-29 18:03:13,988 - INFO - ============================================================
+2025-10-29 18:03:13,989 - INFO - EXECUTION COMPLETED SUCCESSFULLY
+2025-10-29 18:03:13,989 - INFO - Results saved to: outputs/cube_output.csv
+2025-10-29 18:03:13,990 - INFO - Logs saved to: logs\cube_log.txt
+2025-10-29 18:03:13,990 - INFO - ============================================================
+2025-10-29 18:03:13,998 - INFO - OK DuckDB connection closed

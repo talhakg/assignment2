@@ -1,2 +1,15 @@
 Region,Category,Year,Revenue,Cost,Profit
-ALL Regions,ALL Categories,ALL Years,,,
+,,,350.0,60.0,290.0
+South,,,150.0,40.0,110.0
+North,,,200.0,20.0,180.0
+North,Electronics,,200.0,20.0,180.0
+South,Furniture,,150.0,40.0,110.0
+North,Electronics,2025,200.0,20.0,180.0
+South,,2025,150.0,40.0,110.0
+South,Furniture,2025,150.0,40.0,110.0
+,Electronics,,200.0,20.0,180.0
+,Electronics,2025,200.0,20.0,180.0
+,Furniture,,150.0,40.0,110.0
+,Furniture,2025,150.0,40.0,110.0
+,,2025,350.0,60.0,290.0
+North,,2025,200.0,20.0,180.0
