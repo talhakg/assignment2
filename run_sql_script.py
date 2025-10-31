@@ -117,7 +117,7 @@ def load_csv_files(data_folder_path, conn):
             # Register the DataFrame as a table in DuckDB
             conn.register(table_name, df)
             
-            logging.info(f"✓ Loaded '{csv_file}' as table '{table_name}' ({len(df)} rows, {len(df.columns)} columns)")
+            logging.info(f"OK Loaded '{csv_file}' as table '{table_name}' ({len(df)} rows, {len(df.columns)} columns)")
             loaded_tables.append(table_name)
             
         except Exception as e:
@@ -144,7 +144,7 @@ def read_sql_file(sql_file_path):
             logging.error(f"SQL file '{sql_file_path}' is empty")
             return None
         
-        logging.info(f"✓ Successfully read SQL file '{sql_file_path}'")
+        logging.info(f"OK Successfully read SQL file '{sql_file_path}'")
         return sql_query
     
     except Exception as e:
@@ -170,7 +170,7 @@ def execute_sql_query(conn, sql_query):
         # Execute query and return results as DataFrame
         result_df = conn.execute(sql_query).df()
         
-        logging.info(f"✓ Query executed successfully. Result: {len(result_df)} rows, {len(result_df.columns)} columns")
+        logging.info(f"OK Query executed successfully. Result: {len(result_df)} rows, {len(result_df.columns)} columns")
         return result_df
     
     except Exception as e:
@@ -209,7 +209,7 @@ def save_results_to_csv(result_df, sql_file_path):
         # Save DataFrame to CSV
         result_df.to_csv(output_csv_path, index=False)
         
-        logging.info(f"✓ Query results saved to '{output_csv_path}'")
+        logging.info(f"OK Query results saved to '{output_csv_path}'")
         return output_csv_path
     
     except Exception as e:
@@ -284,7 +284,7 @@ def main():
     try:
         # Create DuckDB connection
         conn = duckdb.connect(':memory:')  # In-memory database
-        logging.info("✓ Connected to DuckDB")
+        logging.info("OK Connected to DuckDB")
         
         # Load CSV files as tables
         loaded_tables = load_csv_files(data_folder_path, conn)
@@ -293,7 +293,7 @@ def main():
             logging.error("No tables were loaded successfully. Cannot proceed.")
             sys.exit(1)
         
-        logging.info(f"✓ Successfully loaded {len(loaded_tables)} table(s): {', '.join(loaded_tables)}")
+        logging.info(f"OK Successfully loaded {len(loaded_tables)} table(s): {', '.join(loaded_tables)}")
         
         # Read SQL query from file
         sql_query = read_sql_file(sql_file_path)
@@ -332,7 +332,7 @@ def main():
         # Close DuckDB connection
         if 'conn' in locals():
             conn.close()
-            logging.info("✓ DuckDB connection closed")
+            logging.info("OK DuckDB connection closed")
 
 
 if __name__ == "__main__":

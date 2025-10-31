@@ -1,0 +1,3 @@
+CustomerKey,CustomerFullName,Gender,Age,Region,City,PostalCode,LoyaltyTier,PreferredPayment
+111,Talha Ghori,Male,20,Ontario,Toronto,M6V3T5,Gold,Credit Card
+112,Saad Allahwala,Male,20,Ontario,Toronto,V3B2L9,Silver,PayPal

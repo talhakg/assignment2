@@ -1,0 +1,28 @@
+2025-10-29 16:54:47,638 - INFO - ============================================================
+2025-10-29 16:54:47,639 - INFO - DATA WAREHOUSE LAB - SQL QUERY EXECUTION
+2025-10-29 16:54:47,639 - INFO - ============================================================
+2025-10-29 16:54:47,640 - INFO - Execution started at: 2025-10-29 16:54:47
+2025-10-29 16:54:47,640 - INFO - SQL file: queries\assignment2_schema\sample_select.sql
+2025-10-29 16:54:47,641 - INFO - Data folder: data\assignment2_schema\
+2025-10-29 16:54:47,641 - INFO - Log file: logs\1.txt
+2025-10-29 16:54:47,641 - INFO - ============================================================
+2025-10-29 16:54:47,691 - INFO - Found 6 CSV file(s) in 'data\assignment2_schema\'
+2025-10-29 16:54:47,814 - INFO - Executing SQL query...
+2025-10-29 16:54:47,816 - INFO - Query:
+select * from CustomerDim;
+
+2025-10-29 16:54:47,826 - INFO - 
+=== QUERY RESULTS PREVIEW (First 2 rows) ===
+2025-10-29 16:54:47,827 - INFO - Columns: 
+['CustomerKey', 'CustomerFullName', 'Gender', 'Age', 'Region', 'City', 'PostalCode', 'LoyaltyTier', 'PreferredPayment']
+2025-10-29 16:54:47,827 - INFO - 
+2025-10-29 16:54:47,838 - INFO - 
+ CustomerKey CustomerFullName Gender  Age  Region    City PostalCode LoyaltyTier PreferredPayment
+         111      Talha Ghori   Male   20 Ontario Toronto     M6V3T5        Gold      Credit Card
+         112   Saad Allahwala   Male   20 Ontario Toronto     V3B2L9      Silver           PayPal
+2025-10-29 16:54:47,838 - INFO - ==================================================
+2025-10-29 16:54:47,851 - INFO - ============================================================
+2025-10-29 16:54:47,851 - INFO - EXECUTION COMPLETED SUCCESSFULLY
+2025-10-29 16:54:47,852 - INFO - Results saved to: outputs/sample_select_output.csv
+2025-10-29 16:54:47,852 - INFO - Logs saved to: logs\1.txt
+2025-10-29 16:54:47,853 - INFO - ============================================================

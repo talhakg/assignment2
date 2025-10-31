@@ -1,0 +1,43 @@
+2025-10-29 16:52:04,351 - INFO - ============================================================
+2025-10-29 16:52:04,352 - INFO - DATA WAREHOUSE LAB - SQL QUERY EXECUTION
+2025-10-29 16:52:04,352 - INFO - ============================================================
+2025-10-29 16:52:04,353 - INFO - Execution started at: 2025-10-29 16:52:04
+2025-10-29 16:52:04,353 - INFO - SQL file: queries\assignment2_schema\cube.sql
+2025-10-29 16:52:04,354 - INFO - Data folder: data\assignment2_schema\
+2025-10-29 16:52:04,354 - INFO - Log file: logs\star_schema_log_1.txt
+2025-10-29 16:52:04,355 - INFO - ============================================================
+2025-10-29 16:52:04,453 - INFO - Found 6 CSV file(s) in 'data\assignment2_schema\'
+2025-10-29 16:52:04,572 - INFO - Executing SQL query...
+2025-10-29 16:52:04,572 - INFO - Query:
+-- DuckDB 3¡Á3 CUBE: Region ¡Á Category ¡Á Year  with Revenue, Cost, Profit
+SELECT
+  COALESCE(c.Region,   'ALL Regions')    AS Region,
+  COALESCE(p.Category, 'ALL Categories') AS Category,
+  COALESCE(CAST(d.Year AS VARCHAR), 'ALL Years') AS Year,
+  SUM(f.SalesAmount)        AS Revenue,
+  SUM(f.CostAmount)         AS Cost,
+  SUM(f.SalesAmount - f.CostAmount) AS Profit
+FROM WebSalesFact   AS f
+JOIN CustomerDim    AS c ON f.CustomerKey = c.CustomerKey
+JOIN ProductDim     AS p ON f.ProductKey  = p.ProductKey
+JOIN DateDim        AS d ON f.DateKey     = d.DateKey
+GROUP BY CUBE (c.Region, p.Category, d.Year)
+ORDER BY
+  (c.Region IS NULL),   Region,
+  (p.Category IS NULL), Category,
+  (d.Year IS NULL),     Year;
+
+2025-10-29 16:52:04,609 - INFO - 
+=== QUERY RESULTS PREVIEW (First 1 rows) ===
+2025-10-29 16:52:04,610 - INFO - Columns: 
+['Region', 'Category', 'Year', 'Revenue', 'Cost', 'Profit']
+2025-10-29 16:52:04,610 - INFO - 
+2025-10-29 16:52:04,619 - INFO - 
+     Region       Category      Year  Revenue  Cost  Profit
+ALL Regions ALL Categories ALL Years      NaN   NaN     NaN
+2025-10-29 16:52:04,619 - INFO - ==================================================
+2025-10-29 16:52:04,628 - INFO - ============================================================
+2025-10-29 16:52:04,629 - INFO - EXECUTION COMPLETED SUCCESSFULLY
+2025-10-29 16:52:04,629 - INFO - Results saved to: outputs/cube_output.csv
+2025-10-29 16:52:04,630 - INFO - Logs saved to: logs\star_schema_log_1.txt
+2025-10-29 16:52:04,631 - INFO - ============================================================
